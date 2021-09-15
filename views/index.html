@@ -1,0 +1,16 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const inp = prompt('Enter filePath, lineCount')
+    const [ filePath = undefined, lineCount = undefined ] = inp.split(',').map(e => e.trim());
+    const socket = io();
+    socket.on("connect", () => {  console.log(socket.id); });
+    socket.on("message", data => { 
+        console.log(data); 
+        // const ele = document.querySelector('body');
+        // ele.
+    });
+    socket.emit("monitor", filePath, lineCount);
+    // io();
+</script>
+<body>
+</body>
